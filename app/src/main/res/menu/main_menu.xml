@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn='navigation_view'>
+    <group android:checkableBehavior="single">
+
+    <item
+        android:id="@+id/search_donor"
+        android:icon="@drawable/ic_baseline_send_24"
+        android:title="Search Donor"/>
+        <item
+            android:id="@+id/createrequest"
+            android:icon="@drawable/ic_baseline_note_add_24"
+            android:title="Create Request"/>
+
+    <item android:title="Blood Group">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/a_plus"
+                    android:icon="@drawable/ic_baseline_bloodtype_24"
+                    android:title="A+"/>
+                <item
+                    android:id="@+id/a_minus"
+                    android:icon="@drawable/ic_baseline_bloodtype_24"
+                    android:title="A-"/>
+                <item
+                    android:id="@+id/b_plus"
+                    android:icon="@drawable/ic_baseline_bloodtype_24"
+                    android:title="B+"/>
+                <item
+                    android:id="@+id/b_minus"
+                    android:icon="@drawable/ic_baseline_bloodtype_24"
+                    android:title="B-"/>
+                <item
+                    android:id="@+id/ab_plus"
+                    android:icon="@drawable/ic_baseline_bloodtype_24"
+                    android:title="AB+"/>
+                <item
+                    android:id="@+id/ab_minus"
+                    android:icon="@drawable/ic_baseline_bloodtype_24"
+                    android:title="AB-"/>
+                <item
+                    android:id="@+id/o_plus"
+                    android:icon="@drawable/ic_baseline_bloodtype_24"
+                    android:title="O+"/>
+                <item
+                    android:id="@+id/o_minus"
+                    android:icon="@drawable/ic_baseline_bloodtype_24"
+                    android:title="O-"/>
+
+            </group>
+        </menu>
+    </item>
+    <item android:title="Actions">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/profile"
+                    android:icon="@drawable/ic_baseline_person_24"
+                    android:title="Profile"/>
+                <item
+                    android:id="@+id/notification"
+                    android:icon="@drawable/ic_baseline_notifications_24"
+                    android:title="Notification"/>
+                <item
+                    android:id="@+id/logout"
+                    android:icon="@drawable/ic_baseline_keyboard_tab_24"
+                    android:title="Logout"/>
+
+
+            </group>
+        </menu>
+    </item>
+    </group>
+
+
+
+</menu>
