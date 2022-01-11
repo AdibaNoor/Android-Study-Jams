@@ -3,8 +3,12 @@ package com.example.andy
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.TextView
+import android.widget.Toast
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 
 
 class Onboarding1 : AppCompatActivity() {
@@ -35,7 +39,20 @@ class Onboarding1 : AppCompatActivity() {
             finish()
         }
 
+        checkUser()
+
+    }
+
+     private fun checkUser(){
+        val auth = Firebase.auth
+        val firebaseUser = auth.currentUser
+        if (firebaseUser != null){
+            startActivity(Intent(this,homepage::class.java))
+            finish()
+        }
 
     }
 
 }
+
+
