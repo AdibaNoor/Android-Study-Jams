@@ -37,31 +37,39 @@ class login : AppCompatActivity() {
 
     override fun onStart() {
         super.onStart()
-
-        val emailaddr = EmailAddress.text.toString().trim()
-        val paswd = Password.text.toString().trim()
-
         Register_now.setOnClickListener {
             startActivity(Intent(this, RegScreen::class.java))
         }
 
         Forgetpss.setOnClickListener {
-            //Toast.makeText(this, "clicked", Toast.LENGTH_SHORT).show()
             startActivity(Intent(this, ResetPassword::class.java))             //bug2- unable to redirect in Reset_Password
         }
 
         Login.setOnClickListener {
+            val emailaddr = EmailAddress.text.toString().trim()
+            val paswd = Password.text.toString().trim()
+            if (emailaddr.isEmpty()) {
+                EmailAddress.error = "Email Required"
+                EmailAddress.requestFocus()
+                return@setOnClickListener
+            }
+            if (paswd.isEmpty()) {
+                Password.error = "Enter Password"
+                Password.requestFocus()
+                return@setOnClickListener
+            }
+            validateData()
 
             checkUser()
-
         }
+
 
     }
 
     private fun checkUser(){
         val firebaseUser = auth.currentUser
         if (firebaseUser != null){                      // bug1 - able to login without user data and check valid user data (SOLVED)
-            validateData()
+            startActivity(Intent(this,homepage::class.java))
             finish()
         }
 
@@ -95,8 +103,6 @@ class login : AppCompatActivity() {
                 startActivity(Intent(this,homepage::class.java))                //bug 4- app get closed before login
                 Toast.makeText(this, "Loged In as $email", Toast.LENGTH_SHORT).show()
 
-                //open User profile by intent
-
             }
             .addOnFailureListener {
                 Toast.makeText(this,"Login failed", Toast.LENGTH_SHORT).show()
@@ -104,5 +110,4 @@ class login : AppCompatActivity() {
     }
 
 }
-
 // bug 3 - moving to onboarding 3 on pressing back

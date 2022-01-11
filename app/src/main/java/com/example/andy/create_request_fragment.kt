@@ -7,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 
 
-
 class create_request_fragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
