@@ -53,6 +53,25 @@
         <entry key="..\:/Project-ANDY(AN2)/app/src/main/res/layout/onboarding3.xml" value="0.259375" />
         <entry key="..\:/Project-ANDY(AN2)/app/src/main/res/layout/reg_screen.xml" value="0.259375" />
         <entry key="..\:/Project-ANDY(AN2)/app/src/main/res/layout/search_donor_fragment.xml" value="0.259375" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/Android-Study-Jams_updated/app/src/main/res/layout/activity_homepage.xml" value="0.2" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/Android-Study-Jams_updated/app/src/main/res/layout/create_request.xml" value="0.1816123188405797" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/Android-Study-Jams_updated/app/src/main/res/layout/drop_down_item.xml" value="0.1816123188405797" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/Android-Study-Jams_updated/app/src/main/res/layout/fragment_a_minus.xml" value="0.1816123188405797" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/Android-Study-Jams_updated/app/src/main/res/layout/fragment_a_plus.xml" value="0.1816123188405797" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/Android-Study-Jams_updated/app/src/main/res/layout/fragment_ab_minus.xml" value="0.1816123188405797" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/Android-Study-Jams_updated/app/src/main/res/layout/fragment_ab_plus.xml" value="0.1816123188405797" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/Android-Study-Jams_updated/app/src/main/res/layout/fragment_b_minus.xml" value="0.1816123188405797" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/Android-Study-Jams_updated/app/src/main/res/layout/fragment_b_plus.xml" value="0.1816123188405797" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/Android-Study-Jams_updated/app/src/main/res/layout/fragment_create_request_fragment.xml" value="0.1816123188405797" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/Android-Study-Jams_updated/app/src/main/res/layout/fragment_o_minus.xml" value="0.1816123188405797" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/Android-Study-Jams_updated/app/src/main/res/layout/fragment_o_plus.xml" value="0.1816123188405797" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/Android-Study-Jams_updated/app/src/main/res/layout/fragment_profile.xml" value="0.1816123188405797" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/Android-Study-Jams_updated/app/src/main/res/layout/header.xml" value="0.1816123188405797" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/Android-Study-Jams_updated/app/src/main/res/layout/onboarding1.xml" value="0.1816123188405797" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/Android-Study-Jams_updated/app/src/main/res/layout/onboarding2.xml" value="0.1816123188405797" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/Android-Study-Jams_updated/app/src/main/res/layout/onboarding3.xml" value="0.1816123188405797" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/Android-Study-Jams_updated/app/src/main/res/layout/search_donor_fragment.xml" value="0.1816123188405797" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/Android-Study-Jams_updated/app/src/main/res/menu/main_menu.xml" value="0.2421875" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/updated-project andy/app/src/main/res/drawable/roundbtn.xml" value="0.24814814814814815" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/updated-project andy/app/src/main/res/layout/activity_homepage.xml" value="0.1793478260869565" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/updated-project andy/app/src/main/res/layout/activity_reset_password.xml" value="0.1" />
@@ -82,7 +101,7 @@
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" project-jdk-name="11" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

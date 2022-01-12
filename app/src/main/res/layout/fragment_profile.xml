@@ -16,18 +16,18 @@
         android:elevation="4dp"
         android:popupTheme="@style/ThemeOverlay.AppCompat.Dark"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-        app:navigationIcon="@android:drawable/ic_menu_sort_by_size"
+
         app:subtitleTextColor="#fff"
         app:titleTextColor="#fff" />
-    <TextView
-        android:layout_width="match_parent"
-        android:gravity="center"
-        android:layout_height="wrap_content"
-        android:id="@+id/user_type"
-        android:text="type"
-        android:textSize="20sp"
-        android:textColor="@color/black"
-        android:layout_gravity="center"/>
+<!--    <TextView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:gravity="center"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:id="@+id/user_type"-->
+<!--        android:text="type"-->
+<!--        android:textSize="20sp"-->
+<!--        android:textColor="@color/black"-->
+<!--        android:layout_gravity="center"/>-->
 
     <ImageView
         android:layout_width="100dp"
@@ -78,21 +78,21 @@
         android:textSize="20sp"
         android:textColor="@color/black"
         android:layout_gravity="center"/>
-    <TextView
-        android:layout_width="match_parent"
-        android:gravity="center"
-        android:layout_height="wrap_content"
-        android:id="@+id/user_idnumber"
-        android:text="Id Number"
-        android:textSize="20sp"
-        android:textColor="@color/black"
-        android:layout_gravity="center"/>
-    <Button
-        android:id="@+id/back_button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
-        android:text="Back Button" />
+<!--    <TextView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:gravity="center"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:id="@+id/user_idnumber"-->
+<!--        android:text="Id Number"-->
+<!--        android:textSize="20sp"-->
+<!--        android:textColor="@color/black"-->
+<!--        android:layout_gravity="center"/>-->
+<!--    <Button-->
+<!--        android:id="@+id/back_button"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginStart="20dp"-->
+<!--        android:layout_marginEnd="20dp"-->
+<!--        android:text="Back Button" />-->
 
 </LinearLayout>

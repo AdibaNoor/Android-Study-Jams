@@ -43,7 +43,8 @@ class homepage : AppCompatActivity() {
                 R.id.o_minus ->replacefragment(o_minus(),it.title.toString())
                 R.id.o_plus ->replacefragment(o_plus(),it.title.toString())
                 R.id.profile -> replacefragment(ProfileFragment(),it.title.toString())
-                R.id.notification -> Toast.makeText(applicationContext, "clicked home", Toast.LENGTH_SHORT).show()
+                R.id.feedback -> Toast.makeText(applicationContext,"Feedback",Toast.LENGTH_SHORT).show()
+                //R.id.notification -> Toast.makeText(applicationContext, "clicked home", Toast.LENGTH_SHORT).show()
                // R.id.logout -> Toast.makeText(applicationContext, "clicked home", Toast.LENGTH_SHORT).show()
                 R.id.logout -> UserLogout()
 
