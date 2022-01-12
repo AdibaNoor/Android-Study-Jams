@@ -38,13 +38,6 @@
         android:text="Blood grp"
         android:textSize="16sp"
         android:textColor="#fff"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/user_type"
-        android:text="type"
-        android:textSize="16sp"
-        android:textColor="#fff"/>
 
 
 </LinearLayout>
