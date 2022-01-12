@@ -5,55 +5,78 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
+import com.google.firebase.database.ktx.database
+import com.google.firebase.ktx.Firebase
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [b_plus.newInstance] factory method to
- * create an instance of this fragment.
- */
 class b_plus : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+    lateinit var recyclerAdapter: RecyclerAdapter
+    var userArrayList: ArrayList<User> = ArrayList()
+    lateinit var recyclerView: RecyclerView
+    private lateinit var database: FirebaseDatabase
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
+        val view = inflater.inflate(R.layout.search_donor_fragment, container, false)
+        recyclerView = view.findViewById(R.id.recyclerview)
+        recyclerView.layoutManager = LinearLayoutManager(activity)
+        recyclerView.hasFixedSize()
+
+        database = Firebase.database("https://red-saviour-c3eeb-default-rtdb.asia-southeast1.firebasedatabase.app")
+        EventChangeListener()
+        recyclerAdapter = RecyclerAdapter(userArrayList)
+
+        recyclerView.adapter = recyclerAdapter
+
+        return view
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_b_plus, container, false)
+        //return inflater.inflate(R.layout.fragment_o_plus, container, false)
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment b_plus.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            b_plus().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
+    private fun EventChangeListener() {
+        database.reference.child("Users").addListenerForSingleValueEvent(object :
+            ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                if (snapshot.exists()) {
+                    for (datasnapshot in snapshot.children) {
+                        val user = datasnapshot.getValue(User::class.java)
+                        if (user != null && user.bloodGroup == "B+") {
+                            //Toast.makeText(activity, "${user.name}", Toast.LENGTH_SHORT).show()
+                            userArrayList.add(
+                                User(
+                                    user.userId,
+                                    user.bloodGroup,
+                                    user.email,
+                                    user.address,
+                                    user.phoneNumber,
+                                    user.name
+                                )
+                            )
+                        }
+
+                        recyclerAdapter.notifyDataSetChanged()
+                    }
                 }
+
             }
+
+            override fun onCancelled(error: DatabaseError) {
+                Toast.makeText(activity, "No Data Available", Toast.LENGTH_SHORT).show()
+            }
+
+        })
     }
+
 }

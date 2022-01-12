@@ -10,11 +10,15 @@ import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
 import com.google.android.material.navigation.NavigationView
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ktx.database
+import com.google.firebase.ktx.Firebase
 
 class homepage : AppCompatActivity() {
     lateinit var toggle : ActionBarDrawerToggle
     lateinit var  drawerLayout : DrawerLayout
     private lateinit var auth: FirebaseAuth
+    private lateinit var database: FirebaseDatabase
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,6 +28,8 @@ class homepage : AppCompatActivity() {
         drawerLayout  = findViewById(R.id.drawer_layout)
         val navView : NavigationView = findViewById(R.id.navigationview)
         auth = FirebaseAuth.getInstance()
+
+        database = Firebase.database("https://red-saviour-c3eeb-default-rtdb.asia-southeast1.firebasedatabase.app")
 
         toggle = ActionBarDrawerToggle(this,drawerLayout,R.string.navigation_open_drawer,R.string.navigation_close_drawer)
         drawerLayout.addDrawerListener(toggle)
