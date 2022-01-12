@@ -22,7 +22,7 @@ class create_request : AppCompatActivity() {
         request_btn = findViewById(R.id.request_btn)
         auth = FirebaseAuth.getInstance()
 
-        database = Firebase.database("https://red-saviour-c3eeb-default-rtdb.asia-southeast1.firebasedatabase.app")
+
     }
 
     override fun onStart() {

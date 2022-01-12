@@ -15,7 +15,7 @@ class Homefragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        var navController = Navigation.findNavController(view)
+        val navController = Navigation.findNavController(view)
        val card1 = view.findViewById<CardView>(R.id.card1)
        card1.setOnClickListener {
            Toast.makeText(activity, "This is the Home Page ", Toast.LENGTH_SHORT).show()
@@ -26,6 +26,7 @@ class Homefragment : Fragment() {
         }
         val card3 = view.findViewById<CardView>(R.id.card3)
         card3.setOnClickListener {
+            //getProfileData()
             navController.navigate(R.id.action_homefragment_to_profileFragment)
         }
         val card4 = view.findViewById<CardView>(R.id.card4)
@@ -33,6 +34,7 @@ class Homefragment : Fragment() {
             navController.navigate(R.id.action_homefragment_to_sendEmailfragment)
         }
     }
+    
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
