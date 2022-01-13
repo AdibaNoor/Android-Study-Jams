@@ -41,6 +41,7 @@ class create_request_fragment : Fragment() {
         database = Firebase.database("https://red-saviour-c3eeb-default-rtdb.asia-southeast1.firebasedatabase.app")
 
 
+
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_create_request_fragment, container, false)
     }
@@ -61,15 +62,9 @@ class create_request_fragment : Fragment() {
             val Phone_no = phone_no.text.toString().trim()
             val note = Note.text.toString().trim()
 
-            if (Phone_no.isEmpty() || Phone_no.length < 10) {
-                phone_no.error = "Enter valid Number"
-                phone_no.requestFocus()
-                return@setOnClickListener
-            }
-
-            if (Blood_type.isEmpty()) {
-                Blood_Type.error = "Enter Blood Group"
-                Blood_Type.requestFocus()
+            if (City.isEmpty()) {
+                city.error = "Enter City"
+                city.requestFocus()
                 return@setOnClickListener
             }
 
@@ -79,11 +74,25 @@ class create_request_fragment : Fragment() {
                 return@setOnClickListener
             }
 
-            if (City.isEmpty()) {
-                city.error = "Enter City"
-                city.requestFocus()
+            if (Blood_type.isEmpty() && Blood_type.length < 3) {
+                Blood_Type.error = "Enter valid Blood Group"
+                Blood_Type.requestFocus()
                 return@setOnClickListener
             }
+
+            if (Phone_no.isEmpty() || Phone_no.length < 10) {
+                phone_no.error = "Enter valid Number"
+                phone_no.requestFocus()
+                return@setOnClickListener
+            }
+            /*
+            if ((Blood_type.isEmpty() && Blood_type.length < 3) && (Blood_type == "A+" || Blood_type == "a+" || Blood_type == "A-" || Blood_type == "a-" ||
+                        Blood_type == "B+" || Blood_type == "b+" || Blood_type == "AB+" || Blood_type == "ab+"  || Blood_type == "ab-" || Blood_type == "AB-" || Blood_type == "O+" || Blood_type == "o+" || Blood_type == "O-" ||
+                        Blood_type == "o-" || Blood_type == "B-" || Blood_type == "b-")) {
+                Blood_Type.error = "Enter Valid Blood Group"
+                Blood_Type.requestFocus()
+                return@setOnClickListener
+            }*/
 
             val donors = Donors(City, Hospital, Blood_type, Phone_no, note)
             database.reference.child("Donors").child(Blood_type).child(uid).setValue(donors)

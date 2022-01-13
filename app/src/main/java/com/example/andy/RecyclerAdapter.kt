@@ -16,6 +16,7 @@ class  RecyclerAdapter(private val userList : ArrayList<User>) :RecyclerView.Ada
     }
 
     override fun onBindViewHolder(holder: RecyclerAdapter.ViewHolder, position: Int) {
+       // val user: User = userList[position]
         val currentitem = userList[position]
         holder.name.text = currentitem.name
         holder.email.text = currentitem.email
@@ -27,12 +28,12 @@ class  RecyclerAdapter(private val userList : ArrayList<User>) :RecyclerView.Ada
        return userList.size
     }
     inner class  ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
-        var cardImage: ImageView
+        //var cardImage: ImageView
         var name: TextView
         var email: TextView
         var bloodgrp: TextView
         init {
-            cardImage = itemView.findViewById(R.id.card_image)
+           // cardImage = itemView.findViewById(R.id.card_image)
             name = itemView.findViewById(R.id.card_text1)
             email = itemView.findViewById(R.id.card_text2)
             bloodgrp = itemView.findViewById(R.id.card_text3)
