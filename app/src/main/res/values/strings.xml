@@ -3,6 +3,15 @@
     <string name="i_m_andy">I\'m ANDY</string>
     <string name="navigation_open_drawer">Open Navigation Drawer</string>
     <string name="navigation_close_drawer">Close Navigation Drawer</string>
-    <!-- TODO: Remove or change this placeholder text -->
+    <string-array name="Blood_Type">
+        <item>A+</item>
+        <item>A-</item>
+        <item>B+</item>
+        <item>B-</item>
+        <item>AB+</item>
+        <item>AB-</item>
+        <item>O+</item>
+        <item>O-</item>
+    </string-array>
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

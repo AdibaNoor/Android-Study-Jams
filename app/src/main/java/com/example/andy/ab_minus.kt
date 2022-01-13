@@ -52,18 +52,20 @@ class ab_minus : Fragment() {
                 if (snapshot.exists()) {
                     for (datasnapshot in snapshot.children) {
                         val user = datasnapshot.getValue(User::class.java)
-                        if (user != null && user.bloodGroup == "AB-") {
-                            //Toast.makeText(activity, "${user.name}", Toast.LENGTH_SHORT).show()
-                            userArrayList.add(
-                                User(
-                                    user.userId,
-                                    user.bloodGroup,
-                                    user.email,
-                                    user.address,
-                                    user.phoneNumber,
-                                    user.name
+                        if (user != null) {
+                            if (user.bloodGroup == "AB-"  || user.bloodGroup == "ab-") {
+                                //Toast.makeText(activity, "${user.name}", Toast.LENGTH_SHORT).show()
+                                userArrayList.add(
+                                    User(
+                                        user.userId,
+                                        user.bloodGroup,
+                                        user.email,
+                                        user.address,
+                                        user.phoneNumber,
+                                        user.name
+                                    )
                                 )
-                            )
+                            }
                         }
 
                         recyclerAdapter.notifyDataSetChanged()

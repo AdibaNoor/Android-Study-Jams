@@ -22,15 +22,16 @@
         android:id="@+id/request_head"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="144dp"
-        android:layout_marginEnd="124dp"
-        android:text="Create A Request"
+        android:layout_marginTop="136dp"
+        android:layout_marginEnd="56dp"
+        android:gravity="center"
+        android:text="Create A Request For blood"
         android:textColor="#706E6E"
         android:textSize="25sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.338"
-      android:gravity="center"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
@@ -72,7 +73,7 @@
         android:layout_marginTop="24dp"
         android:layout_marginRight="15dp"
         android:drawableStart="@drawable/ic_baseline_bloodtype_24"
-        android:hint="  Blood Type"
+        android:hint="  Blood Type(for ex:A+,a-, AB+, ab+)"
         android:inputType="text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -120,5 +121,18 @@
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/Note" />
+
+<!--    <Spinner-->
+<!--        android:id="@+id/spinner"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginStart="15dp"-->
+<!--        android:layout_marginTop="320dp"-->
+<!--        android:layout_marginEnd="15dp"-->
+<!--        android:entries="@array/Blood_Type"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        tools:ignore="MissingConstraints" />-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -18,17 +18,17 @@
             android:layout_height="match_parent"
             android:id="@+id/framelayout">
 
-            <androidx.appcompat.widget.Toolbar
-                android:id="@+id/toolbar"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="#ff2156"
-                android:elevation="4dp"
-                android:popupTheme="@style/ThemeOverlay.AppCompat.Dark"
-                android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-                app:navigationIcon="@android:drawable/ic_menu_sort_by_size"
-                app:subtitleTextColor="#F40202"
-                app:titleTextColor="#F30B0B" />
+<!--            <androidx.appcompat.widget.Toolbar-->
+<!--                android:id="@+id/toolbar"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:background="#ff2156"-->
+<!--                android:elevation="4dp"-->
+<!--                android:popupTheme="@style/ThemeOverlay.AppCompat.Dark"-->
+<!--                android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"-->
+<!--                app:navigationIcon="@android:drawable/ic_menu_sort_by_size"-->
+<!--                app:subtitleTextColor="#F40202"-->
+<!--                app:titleTextColor="#F30B0B" />-->
 
             <androidx.fragment.app.FragmentContainerView
                 android:id="@+id/fragmentContainerView2"
@@ -60,7 +60,7 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"
-        app:headerLayout="@layout/header"
+        app:headerLayout="@layout/fragment_header"
         android:fitsSystemWindows="true"
 
         app:menu="@menu/main_menu"
