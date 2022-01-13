@@ -52,18 +52,20 @@ class b_plus : Fragment() {
                 if (snapshot.exists()) {
                     for (datasnapshot in snapshot.children) {
                         val user = datasnapshot.getValue(User::class.java)
-                        if (user != null && user.bloodGroup == "B+") {
-                            //Toast.makeText(activity, "${user.name}", Toast.LENGTH_SHORT).show()
-                            userArrayList.add(
-                                User(
-                                    user.userId,
-                                    user.bloodGroup,
-                                    user.email,
-                                    user.address,
-                                    user.phoneNumber,
-                                    user.name
+                        if (user != null) {
+                            if (user.bloodGroup == "B+"  || user.bloodGroup == "b+") {
+                                //Toast.makeText(activity, "${user.name}", Toast.LENGTH_SHORT).show()
+                                userArrayList.add(
+                                    User(
+                                        user.userId,
+                                        user.bloodGroup,
+                                        user.email,
+                                        user.address,
+                                        user.phoneNumber,
+                                        user.name
+                                    )
                                 )
-                            )
+                            }
                         }
 
                         recyclerAdapter.notifyDataSetChanged()

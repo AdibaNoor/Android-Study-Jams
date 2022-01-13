@@ -12,13 +12,9 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
-import android.widget.AdapterView
-import android.widget.ArrayAdapter
-import android.widget.Spinner
 
 
 class create_request_fragment : Fragment() {
-    val types = arrayOf("A+","A-","B+","B-","AB+","AB-","O+","O-")
     lateinit var city : EditText
     lateinit var hospital : EditText
     lateinit var Blood_Type : EditText
@@ -44,37 +40,10 @@ class create_request_fragment : Fragment() {
 
         database = Firebase.database("https://red-saviour-c3eeb-default-rtdb.asia-southeast1.firebasedatabase.app")
 
-        val t = inflater.inflate(R.layout.fragment_create_request_fragment, container, false)
-        val spinner = t.findViewById<Spinner>(R.id.spinner)
-        spinner?.adapter =
-            activity?.applicationContext?.let { ArrayAdapter(it, R.layout.drop_down_item, types) }
-        spinner?.onItemSelectedListener = object :AdapterView.OnItemSelectedListener{
-            override fun onNothingSelected(parent: AdapterView<*>?) {
-                println("error")
-
-            }
-
-            override fun onItemSelected(
-                parent: AdapterView<*>?,
-                view: View?,
-                position: Int,
-                id: Long
-            ) {
-                val type = parent?.getItemAtPosition(position).toString()
-                Toast.makeText(activity,type, Toast.LENGTH_LONG).show()
-                println(type)
-            }
-        }
-//        val blood_type = resources.getStringArray(R.array.Blood_Type)
-//        val arrayAdapter = ArrayAdapter(requireContext(), R.layout.drop_down_item,blood_type)
-//        val autoCompleteTextView = R.id.autoCompleteTextView3
-//        arrayOf(autoCompleteTextView)0
-        return t
-
 
 
         // Inflate the layout for this fragment
-        //return inflater.inflate(R.layout.fragment_create_request_fragment, container, false)
+        return inflater.inflate(R.layout.fragment_create_request_fragment, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -93,15 +62,9 @@ class create_request_fragment : Fragment() {
             val Phone_no = phone_no.text.toString().trim()
             val note = Note.text.toString().trim()
 
-            if (Phone_no.isEmpty() || Phone_no.length < 10) {
-                phone_no.error = "Enter valid Number"
-                phone_no.requestFocus()
-                return@setOnClickListener
-            }
-
-            if (Blood_type.isEmpty()) {
-                Blood_Type.error = "Enter Blood Group"
-                Blood_Type.requestFocus()
+            if (City.isEmpty()) {
+                city.error = "Enter City"
+                city.requestFocus()
                 return@setOnClickListener
             }
 
@@ -111,11 +74,25 @@ class create_request_fragment : Fragment() {
                 return@setOnClickListener
             }
 
-            if (City.isEmpty()) {
-                city.error = "Enter City"
-                city.requestFocus()
+            if (Blood_type.isEmpty() && Blood_type.length < 3) {
+                Blood_Type.error = "Enter valid Blood Group"
+                Blood_Type.requestFocus()
                 return@setOnClickListener
             }
+
+            if (Phone_no.isEmpty() || Phone_no.length < 10) {
+                phone_no.error = "Enter valid Number"
+                phone_no.requestFocus()
+                return@setOnClickListener
+            }
+            /*
+            if ((Blood_type.isEmpty() && Blood_type.length < 3) && (Blood_type == "A+" || Blood_type == "a+" || Blood_type == "A-" || Blood_type == "a-" ||
+                        Blood_type == "B+" || Blood_type == "b+" || Blood_type == "AB+" || Blood_type == "ab+"  || Blood_type == "ab-" || Blood_type == "AB-" || Blood_type == "O+" || Blood_type == "o+" || Blood_type == "O-" ||
+                        Blood_type == "o-" || Blood_type == "B-" || Blood_type == "b-")) {
+                Blood_Type.error = "Enter Valid Blood Group"
+                Blood_Type.requestFocus()
+                return@setOnClickListener
+            }*/
 
             val donors = Donors(City, Hospital, Blood_type, Phone_no, note)
             database.reference.child("Donors").child(Blood_type).child(uid).setValue(donors)
