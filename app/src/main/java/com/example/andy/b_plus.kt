@@ -77,6 +77,7 @@ class b_plus : Fragment() {
             override fun onCancelled(error: DatabaseError) {
                 Toast.makeText(activity, "No Data Available", Toast.LENGTH_SHORT).show()
             }
+            
 
         })
     }
